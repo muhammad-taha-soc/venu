@@ -8,7 +8,7 @@ const Header = () => {
         // setIsOpen(!isOpen);
     };
     return (
-        <header className="bg-black text-white z-50 py-2 px-6 flex justify-between md:ml-[10%] md:mt-5 items-center rounded-full fixed md:w-[calc(80%-5rem)] w-[calc(95%-3rem)] top-10">
+        <header className="bg-black text-white z-50 py-2 px-6  flex justify-between md:ml-[10%] md:mt-5 items-center rounded-full fixed md:w-[calc(80%-5rem)] w-[calc(95%-3rem)] top-10">
             <img src='/assets/logo/logo.svg' alt="Logo" className="" />
 
             <div className="md:hidden">

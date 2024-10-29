@@ -6,7 +6,7 @@ export default function VenuSection() {
     const [strategyExpanded, setStrategyExpanded] = useState(false)
 
     return (
-        <div className="flex flex-col lg:flex-row justify-between items-start p-8 max-w-7xl mx-auto">
+        <div className="flex flex-col lg:flex-row justify-between items-start p-4 w-full max-w-7xl mx-auto mt-6">
             <div className="w-full lg:w-1/2 pr-0 lg:pr-12 text-left">
                 <h1 className="text-4xl font-bold mb-6">
                     What is <span className="text-purple-600">venu</span>?

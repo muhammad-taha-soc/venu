@@ -3,8 +3,8 @@ import hero from "../assets/hero-img.png"
 
 const Hero = () => {
     return (
-        <div className="text-white bg-[#200F36] rounded-[64px] flex flex-col md:flex-row justify-center md:text-left items-center md:items-end">
-            <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left h-[500px] lg:h-[600px] w-full lg:w-1/2 p-4">
+        <div className="text-white bg-[#200F36] rounded-[64px] flex flex-col md:flex-row justify-center md:text-left items-center md:items-end ">
+            <div className="flex flex-col justify-center items-center md:items-start text-center md:text-left h-[500px] lg:h-[600px] w-full lg:w-2/3 p-4">
                 {/* <div className="flex md:ml-6 items-center bg-blue-100 border-2 md:mt-3 border-[#00BBD2] rounded py-2 px-4 space-x-2">
                     <div className="flex -space-x-1 overflow-hidden">
                         <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="/images/influencer1.jpg" alt="Influencer 1" />
