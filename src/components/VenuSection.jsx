@@ -6,8 +6,8 @@ export default function VenuSection() {
     const [strategyExpanded, setStrategyExpanded] = useState(false)
 
     return (
-        <div className="flex flex-col lg:flex-row justify-between items-start p-4 w-full max-w-7xl mx-auto mt-6">
-            <div className="w-full lg:w-1/2 pr-0 lg:pr-12 text-left">
+        <div className="flex flex-col lg:flex-row justify-between items-start p-4 lg:w-[80%] w-full  max-w-7xl mx-auto mt-6">
+            <div className="w-full lg:w-1/2 pr-0 lg:pr-12 text-left lg:ml-4">
                 <h1 className="text-4xl font-bold mb-6">
                     What is <span className="text-purple-600">venu</span>?
                 </h1>
@@ -34,7 +34,7 @@ export default function VenuSection() {
                     </div>
                 </div>
             </div>
-            <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
+            <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-12 ">
                 <div className=" rounded-3xl p-8 relative">
                     <img
                         src="/assets/img/venu-section.svg"

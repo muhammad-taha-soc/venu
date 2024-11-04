@@ -2,7 +2,7 @@
 export default function PreLaunch() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-4">
-            <div className="w-full max-w-7xl">
+            <div className=" lg:w-[80%] w-full max-w-7xl">
                 <div className="bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700 text-white rounded-3xl overflow-hidden shadow-lg">
                     <div className="p-8 md:p-12 space-y-6">
                         <h2 className="text-3xl md:text-4xl font-bold text-center">

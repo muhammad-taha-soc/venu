@@ -1,42 +1,66 @@
 import React, { useState } from 'react';
+import SignUpModal from './SignUpModal';
 // import logo from "/assets/logo/logo.svg"
 
-const Header = () => {
-    const [isOpen, setIsOpen] = useState(false);
+export default function Header() {
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
 
     const toggleMenu = () => {
-        // setIsOpen(!isOpen);
-    };
+        setIsOpen(!isOpen)
+    }
+
     return (
-        <header className="bg-black text-white z-50 py-2 px-6  flex justify-between md:ml-[10%] md:mt-5 items-center rounded-full fixed md:w-[calc(80%-5rem)] w-[calc(95%-3rem)] top-10">
-            <img src='/assets/logo/logo.svg' alt="Logo" className="" />
+        <>
+            <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[85%] max-w-7xl mx-auto bg-black text-white z-50 py-3 px-6 flex items-center justify-between rounded-full">
+                <img src="/assets/logo/logo.svg" alt="Logo" className="h-8 w-auto" />
 
-            <div className="md:hidden">
-                <button onClick={toggleMenu} className="focus:outline-none">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-
-            <nav className={`md:flex items-center space-x-6 text-sm ${isOpen ? 'flex' : 'hidden'} md:block`}>
-                {['About', 'Features', 'Contact'].map((link, index) => (
-                    <a
-                        key={index}
-                        href={`/${link.toLowerCase().replace(/\s+/g, '-')}`}
-                        className="hover:text-gray-300 transition-colors duration-300"
+                <div className="md:hidden">
+                    <button
+                        onClick={toggleMenu}
+                        className="focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75 rounded-lg p-1"
+                        aria-label="Toggle menu"
                     >
-                        {link}
-                    </a>
-                ))}
-                <button className="bg-[#8B3EF8] hover:bg-[#8B3EF8] text-white py-2 px-4 rounded-full transition-colors duration-300">
-                    Pre-Launch Sign Up
-                </button>
-            </nav>
-        </header>
+                        {isOpen ? (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                            </svg>
+                        )}
+                    </button>
+                </div>
 
-    );
-};
-
-
-export default Header;
+                <nav className={`
+          absolute md:relative top-full left-0 right-0 mt-2 md:mt-0
+          md:flex items-center gap-8 
+          ${isOpen ? 'flex' : 'hidden'} md:flex
+          ${isOpen ? 'flex-col' : 'flex-row'}
+          md:flex-row
+          ${isOpen ? 'bg-black rounded-2xl p-4' : ''}
+          md:bg-transparent md:p-0
+        `}>
+                    {['About', 'Features', 'Contact'].map((link) => (
+                        <a
+                            key={link}
+                            href={`/${link.toLowerCase()}`}
+                            className="text-sm hover:text-gray-300 transition-colors duration-300 py-2 md:py-0"
+                        >
+                            {link}
+                        </a>
+                    ))}
+                    <button
+                        onClick={() => setIsModalOpen(true)}
+                        className="bg-[#8B3EF8] hover:bg-[#8B3EF8]/90 text-white py-2 px-6 rounded-full transition-colors duration-300 text-sm font-medium whitespace-nowrap"
+                    >
+                        Pre-Launch Sign Up
+                    </button>
+                </nav>
+            </header>
+            {/* Assuming SignUpModal component exists */}
+            {isModalOpen && <SignUpModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />}
+        </>
+    )
+}
