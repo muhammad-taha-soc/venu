@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
-    <footer className=" w-full text-center">
+    <footer className=" w-full text-center font-inter font-normal max-w-7xl mx-auto">
       
-      <p className="text-lg ">Copyright © 2024 <span className="font-semibold">WeAreVenu</span> - All rights reserved.</p>
+      <p className="text-base my-10 ">Copyright © 2024 <span className="font-semibold text-black">WeAreVenu</span> - All rights reserved.</p>
         
-
+      <img src="/assets/logo/logo-footer.svg" alt="Logo" className="h-[275px] max-w-7xl mx-auto w-full lg:w-[80%]" />
     </footer>
   );
 };

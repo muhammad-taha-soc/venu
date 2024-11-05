@@ -46,14 +46,14 @@ export default function Header() {
                         <a
                             key={link}
                             href={`/${link.toLowerCase()}`}
-                            className="text-sm hover:text-gray-300 transition-colors duration-300 py-2 md:py-0"
+                            className="text-sm font-inter hover:text-gray-300 md:text-base transition-colors font-medium duration-300 py-2 md:py-0"
                         >
                             {link}
                         </a>
                     ))}
                     <button
                         onClick={() => setIsModalOpen(true)}
-                        className="bg-[#8B3EF8] hover:bg-[#8B3EF8]/90 text-white py-2 px-6 rounded-full transition-colors duration-300 text-sm font-medium whitespace-nowrap"
+                        className="bg-[#8B3EF8] hover:bg-[#8B3EF8]/90 text-white py-2 px-6 rounded-full transition-colors duration-300 text-sm font-medium whitespace-nowrap md:text-base md:w-[202px] md:h-[48px]"
                     >
                         Pre-Launch Sign Up
                     </button>

@@ -71,17 +71,17 @@ export default function ExcitingFeatures() {
     return (
         <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto lg:w-[80%]">
-                <h2 className="text-3xl font-bold text-center mb-8">Exciting <span className="text-purple-600">Features</span></h2>
+                <h2 className="text-5xl font-semibold font-clash text-center mb-8">Exciting <span className="text-[#8B3EF8]">Features</span></h2>
                 <div className="flex justify-center mb-12">
-                    <div className="bg-purple-50 p-0.5 rounded-full inline-flex space-x-0.5">
-                        <button className="bg-black text-white px-4 py-1.5 rounded-full text-sm font-medium">What End-Users Can Use</button>
-                        <button className="bg-white text-purple-900 px-4 py-1.5 rounded-full text-sm font-medium">What businesses can use</button>
+                    <div className="bg-[#EFE7FB] p-0.5 rounded-full inline-flex space-x-0.5 font-inter font-semibold text-sm md:text-xl">
+                        <button className="bg-black text-white px-3 py-[5px]  md:px-6 md:py-[10px] rounded-full ">What End-Users Can Use</button>
+                        <button className=" text-black px-3 py-[5px] md:px-6 md:py-[10px] rounded-full ">What businesses can use</button>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
                         <div key={index} className="">
-                            <div className="aspect-w-1 aspect-h-1 flex flex-row items-end justify-center mb-4 bg-purple-50 p-6 rounded-lg">
+                            <div className="aspect-w-1 aspect-h-1 flex flex-row items-end justify-center mb-4 bg-[#EFE7FB] p-6 rounded-lg">
                                 <img
                                     src={feature.image}
                                     alt={feature.title}
@@ -90,7 +90,7 @@ export default function ExcitingFeatures() {
                                     className={`object-cover rounded-lg relative ${index % 2 == 0 ? 'bottom-5':'top-5' }`}
                                 />
                             </div>
-                            <p className="text-sm text-gray-600">{feature.title}</p>
+                            <p className="text-2xl text-left font-clash font-medium text-black">{feature.title}</p>
                         </div>
                     ))}
                 </div>

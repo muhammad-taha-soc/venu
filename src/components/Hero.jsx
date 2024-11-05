@@ -3,9 +3,9 @@ import hero from "../assets/hero-img.png"
 
 const Hero = () => {
     return (
-        <div className="text-white bg-[#200F36] rounded-[64px]">
-            <div className="flex flex-col md:flex-row justify-between md:text-left items-center md:items-end lg:w-[80%] w-full  max-w-7xl mx-auto mt-6">
-            <div className=" flex flex-col justify-center items-center md:items-start text-center md:text-left h-[500px] lg:h-[650px] md:w-[65%] ">
+        <div className="text-white bg-[#200F36] bg-background-image bg-contain  rounded-[64px]">
+            <div className="flex flex-col md:flex-row justify-between md:text-left items-center md:items-end lg:w-[80%] w-full  max-w-7xl mx-auto mt-14">
+            <div className=" flex flex-col justify-center items-center md:items-start text-center md:text-left h-[500px] lg:h-[650px] md:w-[65%] p-6 sm:p-0">
                 {/* <div className="flex md:ml-6 items-center bg-blue-100 border-2 md:mt-3 border-[#00BBD2] rounded py-2 px-4 space-x-2">
                     <div className="flex -space-x-1 overflow-hidden">
                         <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="/images/influencer1.jpg" alt="Influencer 1" />
@@ -14,9 +14,9 @@ const Hero = () => {
                     </div>
                     <span className="font-bold md:text-sm text-xs text-black">TRUSTED BY <span className="text-[#00BBD2]">830+</span> INFLUENCERS</span>
                 </div> */}
-                <h1 className="lg:text-5xl text-3xl mt-5  md:px-6">
+                <h1 className="lg:text-6xl text-3xl mt-5 font-clash  md:px-6 font-semibold">
 
-                    <span className="font-bold" >Show Your <span className="">
+                    <span className="" >Show Your <span className="">
                         {/* <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="/images/influencer1.jpg" alt="Influencer 1" />
                         <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="/images/influencer2.jpg" alt="Influencer 2" />
                         <img className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="/images/influencer3.jpg" alt="Influencer 3" /> */}
@@ -36,9 +36,9 @@ const Hero = () => {
                         </div>
                     </span> City <br />Who You Are!</span>
                 </h1>
-                <p className="lg:text-xl md:px-6 my-6">
+                <p className="lg:text-lg md:px-6 my-6 font-inter">
                     Connect your business to a thriving community that helps users discover real-time venue and event info tailored to their interests and social circles, making it easy to explore, organize, and attend together.</p>
-                <p className="lg:text-xl md:px-6 my-4">
+                <p className="lg:text-lg md:px-6 my-4 font-general">
                     Show Your Interest In The Pre-Launch Beta</p>
                 {/* <div className="flex md:ml-6 flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 mt-4">
                     <button className="bg-black text-white border border-white rounded-full py-2 px-6 text-sm uppercase hover:bg-white hover:text-black transition-colors">
@@ -48,18 +48,18 @@ const Hero = () => {
                         Check reviews
                     </button>
                 </div> */}
-                    <div className="flex flex-col sm:flex-row items-center space-x-2 px-6">
+                    <div className="flex flex-col sm:flex-row items-center font-medium md:text-base font-inter space-x-2 px-6">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="flex-grow rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white/50 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                            className="flex-grow rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
-                        <button className="mt-5 md:mt-0 rounded-full bg-purple-600 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+                        <button className="w-full mt-5 sm:mt-0 rounded-full bg-[#8B3EF8] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
                             Sign Up
                         </button>
                     </div>
             </div>
-            <img src='/assets/img/hero-2.svg' alt="Content Creation" className="" />
+            <img src='/assets/img/hero-group-crop.png' alt="Content Creation" className="sm:mt-0 mt-10" />
             
             {/* <div className="">
 

@@ -2,7 +2,16 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        inter: ["Inter"],
+        clash: ["Clash Grotesk"],
+        general: ["General Sans"],
+      },
+      backgroundImage: {
+        "background-image": "url('/assets/img/background.png')",
+      },
+    },
   },
   plugins: [],
 };
