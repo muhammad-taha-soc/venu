@@ -70,7 +70,7 @@ const features = [
 export default function ExcitingFeatures() {
     return (
         <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto lg:w-[80%]">
+            <div className="max-w-auto  mx-auto lg:w-[95%]">
                 <h2 className="text-5xl font-semibold font-clash text-center mb-8">Exciting <span className="text-[#8B3EF8]">Features</span></h2>
                 <div className="flex justify-center mb-12">
                     <div className="bg-[#EFE7FB] p-0.5 rounded-full inline-flex space-x-0.5 font-inter font-semibold text-sm md:text-xl">
@@ -87,7 +87,7 @@ export default function ExcitingFeatures() {
                                     alt={feature.title}
                                     width={200}
                                     height={200}
-                                    className={`object-cover rounded-lg relative ${index % 2 == 0 ? 'bottom-5':'top-5' }`}
+                                    className={`object-cover rounded-lg relative ${index % 2 == 0 ? 'bottom-5' : 'top-5'}`}
                                 />
                             </div>
                             <p className="text-2xl text-left font-clash font-medium text-black">{feature.title}</p>
