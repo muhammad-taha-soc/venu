@@ -6,9 +6,9 @@ export default function PreLaunch() {
 
     return (
         <>
-            <section id="signup" className="flex flex-col items-center justify-center p-4">
+            <section id="signup"  className="flex flex-col items-center justify-center p-4">
                 <div className=" lg:w-[95%] w-full max-w-auto ">
-                    <div className="bg-[#200F36] bg-background-image  text-white rounded-3xl overflow-hidden shadow-lg">
+                    <div style={{ backgroundPosition: "-816px -978px" }} className="bg-[#200F36] bg-background-image bg-cover text-white rounded-3xl overflow-hidden shadow-lg">
                         <div className="p-8 md:p-12 space-y-6">
                             <h2 className="text-3xl md:text-5xl font-semibold font-clash text-center">
                                 Pre-launch <span className="text-[#A261FF]">Sign Up</span>
