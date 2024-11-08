@@ -7,32 +7,33 @@ const Hero = () => {
                     <h1 className="lg:text-6xl text-3xl mt-5 font-clash  md:px-6 font-semibold">
                         <span className="" >Show Your <span className="">
                             <div className="inline-flex -space-x-2 mb-4">
-                                {[...Array(4)].map((_, i) => (
+                                {['round-img-1.png', 'round-img-2.png', 'round-img-3.png','round-img-4.jpg'].map((img, i) => (
                                     <div
                                         key={i}
-                                        className="w-5 h-5 lg:w-10 lg:h-10 rounded-full border-2 border-white overflow-hidden"
+                                        className="w-5 h-5 lg:w-10 lg:h-10 rounded-full border-2 border-[#200F36] overflow-hidden"
                                     >
                                         <img
-                                            src={`https://i.pravatar.cc/40?img=${i + 1}`}
-                                            alt={`User ${i + 1}`}
+                                            src={`/assets/img/${img}`}
+                                            alt={`User`}
                                             className="md:w-full md:h-full object-cover"
                                         />
                                     </div>
                                 ))}
                             </div>
-                        </span> City <br />Who You Are!</span>
+                            
+                        </span> City <br />Who <span className="bg-background-vector px-5 bg-cover ">You</span> Are!</span>
                     </h1>
                     <p className="lg:text-lg md:px-6 my-6 font-inter md:w-[85%]">
                         Connect your business to a thriving community that helps users discover real-time venue and event info tailored to their interests and social circles, making it easy to explore, organize, and attend together.</p>
-                    <p className="lg:text-lg md:px-6 my-4 font-general">
+                    <p className="lg:text-lg md:px-6 my-4 font-general font-semibold">
                         Show Your Interest In The Pre-Launch Beta</p>
                     <div className="flex flex-col sm:flex-row items-center font-medium md:text-base font-inter space-x-2 px-6">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="w-full flex-grow rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                            className="w-full lg:w-[290px] flex-grow rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
-                        <button className="w-full md:w-[50%] mt-5 sm:mt-0 rounded-full bg-[#8B3EF8] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+                        <button className="w-full md:w-[109px] mt-5 sm:mt-0 rounded-full bg-[#8B3EF8] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
                             Sign Up
                         </button>
                     </div>

@@ -33,7 +33,7 @@ export default function PreLaunch() {
                             </div>
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <section id='contact' className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                         {['Ben', 'Oscar'].map((name) => (
                             <div key={name} className="bg-[#200F36] text-white rounded-2xl overflow-hidden shadow-md">
                                 <div className="p-4 flex items-center justify-between">
@@ -56,7 +56,7 @@ export default function PreLaunch() {
                                 </div>
                             </div>
                         ))}
-                    </div>
+                    </section>
                 </div>
             </section>
             {isModalOpen && <SignUpModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />}

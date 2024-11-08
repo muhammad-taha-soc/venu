@@ -10,6 +10,7 @@ export default {
       },
       backgroundImage: {
         "background-image": "url('/assets/img/background.png')",
+        "background-vector": "url('/assets/img/vector-hero-img.png')",
       },
     },
   },

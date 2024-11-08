@@ -122,14 +122,14 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                     </div>
 
                     <div className="flex justify-center -space-x-2 mb-4">
-                        {[...Array(4)].map((_, i) => (
+                            {['round-img-1.png', 'round-img-2.png', 'round-img-3.png', 'round-img-4.jpg'].map((img, i) => (
                             <div
                                 key={i}
                                 className="w-10 h-10 rounded-full border-2 border-white overflow-hidden"
                             >
                                 <img
-                                    src={`https://i.pravatar.cc/40?img=${i + 1}`}
-                                    alt={`User ${i + 1}`}
+                                        src={`/assets/img/${img}`}
+                                    alt={`User`}
                                     className="w-full h-full object-cover"
                                 />
                             </div>

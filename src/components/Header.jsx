@@ -44,7 +44,7 @@ export default function Header() {
                     {['About', 'Features', 'Contact'].map((link) => (
                         <a
                             key={link}
-                            href={`/${link.toLowerCase()}`}
+                            href={`#${link.toLowerCase()}`}
                             className="text-sm font-inter hover:text-gray-300 md:text-base transition-colors font-medium duration-300 py-2 md:py-0"
                         >
                             {link}
