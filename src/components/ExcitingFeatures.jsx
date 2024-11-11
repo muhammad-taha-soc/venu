@@ -144,9 +144,12 @@ export default function ExcitingFeatures() {
                         <button className=" text-black px-3 py-[5px] md:px-6 md:py-[10px] rounded-full ">What businesses can use</button>
                     </div>
                 </div>
-                <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     {features.map((feature, index) => (
-                        <div key={index} className="max-w-[379px] mx-auto">
+                        <div key={index}
+                            className={`max-w-[379px] mx-auto ${index === features.length - 1 && "lg:col-span-3" 
+                                }`}
+                        >
                             <div className="aspect-w-1 aspect-h-1 flex flex-row  justify-center mb-4  rounded-lg">
                                 <img
                                     src={feature.image}
@@ -164,3 +167,37 @@ export default function ExcitingFeatures() {
         </section>
     )
 }
+
+// export default function ExcitingFeatures() {
+//     return (
+//         <section id='features' className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+//             <div className="max-w-auto mx-auto lg:w-[95%]">
+//                 <h2 className="text-5xl font-semibold font-clash text-center mb-8">Exciting <span className="text-[#8B3EF8]">Features</span></h2>
+//                 <div className="flex justify-center mb-12">
+//                     <div className="bg-[#EFE7FB] p-0.5 rounded-full inline-flex space-x-0.5 font-inter font-semibold text-sm md:text-xl">
+//                         <button className="bg-black text-white px-3 py-[5px] md:px-6 md:py-[10px] rounded-full ">What End-Users Can Use</button>
+//                         <button className="text-black px-3 py-[5px] md:px-6 md:py-[10px] rounded-full ">What businesses can use</button>
+//                     </div>
+//                 </div>
+//                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+//                     {features.map((feature, index) => (
+//                         <div
+//                             key={index}
+//                             className={`max-w-[379px] mx-auto ${index === features.length - 1 ? "lg:col-span-3 flex justify-center" : ""
+//                                 }`}
+//                         >
+//                             <div className="aspect-w-1 aspect-h-1 flex flex-row justify-center mb-4 rounded-lg">
+//                                 <img
+//                                     src={feature.image}
+//                                     alt={feature.title}
+//                                     className="rounded-lg w-full"
+//                                 />
+//                             </div>
+//                             <p className="text-2xl text-left font-clash font-medium text-black">{feature.title}</p>
+//                         </div>
+//                     ))}
+//                 </div>
+//             </div>
+//         </section>
+//     );
+// }

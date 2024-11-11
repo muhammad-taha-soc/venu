@@ -1,7 +1,7 @@
 // src/components/HeroSection.js
 const Hero = () => {
     return (
-        <div style={{ backgroundPosition: "-1017px -781px" }} className="bg-background-image bg-cover  text-white bg-[#200F36]   md:rounded-[64px]">
+        <div style={{ backgroundPosition: "-1101px -573px" }} className="bg-background-image bg-cover  text-white bg-[#200F36]   md:rounded-[64px]">
             <div className="flex flex-col md:flex-row justify-between md:text-left items-center md:items-end lg:w-[94%] w-full  max-w-auto mx-auto">
                 <div  className="flex flex-col justify-center  md:items-start text-center md:text-left h-[500px] lg:h-[650px] md:w-[85%] p-6 mt-16 lg:mt-0 sm:p-0">
                     <h1 className="lg:text-6xl text-3xl mt-5 font-clash  md:px-6 font-semibold">
@@ -20,8 +20,7 @@ const Hero = () => {
                                     </div>
                                 ))}
                             </div>
-                            
-                        </span> City <br />Who <span className="bg-background-vector px-5 bg-cover ">You</span> Are!</span>
+                        </span> City <br />Who <span className="relative p-1"><img src='/assets/img/vector-hero-img.png' className="bg-cover inline absolute w-[300px] h-[34px] lg:w-[693px] lg:h-[56px]"/> You</span> Are!</span>
                     </h1>
                     <p className="lg:text-lg md:px-6 my-6 font-inter md:w-[85%]">
                         Connect your business to a thriving community that helps users discover real-time venue and event info tailored to their interests and social circles, making it easy to explore, organize, and attend together.</p>
@@ -45,7 +44,6 @@ const Hero = () => {
                         className={`object-cover  w-2/3 h-2/3 lg:w-[95%] lg:h-[95%]`}
                     />
                 </div>
-
             </div>
         </div>
     );

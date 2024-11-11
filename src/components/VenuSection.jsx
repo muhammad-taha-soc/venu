@@ -1,12 +1,11 @@
 import { useState } from 'react'
-// import { ChevronDown, ChevronUp } from 'lucide-react'
 
 export default function VenuSection() {
     const [listExpanded, setListExpanded] = useState(false)
     const [strategyExpanded, setStrategyExpanded] = useState(false)
 
     return (
-        <section id="about" className="flex flex-col lg:flex-row justify-between items-center p-4 lg:w-[95%] w-full max-w-auto mx-auto mt-6">
+        <section id="about" className="flex flex-col lg:flex-row justify-between items-start p-4 py-32 lg:w-[95%] w-full max-w-auto mx-auto mt-6">
             <div className="w-full lg:w-1/2 pr-0 lg:pr-12 text-left lg:ml-4">
                 <h1 className="text-5xl font-semibold font-clash mb-6">
                     What is <span className="text-[#8B3EF8]">venu</span>?
@@ -69,7 +68,7 @@ export default function VenuSection() {
                 </div>
             </div>
             <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
-                <div className="rounded-3xl p-8 relative">
+                <div className="rounded-3xl  relative">
                     <img
                         src="/assets/img/venu-section.svg"
                         alt="Venu app interface"

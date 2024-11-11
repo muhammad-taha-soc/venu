@@ -13,10 +13,10 @@ export default function PreLaunch() {
                             <h2 className="text-3xl md:text-5xl font-semibold font-clash text-center">
                                 Pre-launch <span className="text-[#A261FF]">Sign Up</span>
                             </h2>
-                            <p className="text-center max-w-3xl mx-auto text-sm md:text-lg font-inter font-normal">
+                            <p className="text-center  mx-auto text-sm md:text-lg font-inter font-normal">
                                 We are looking for businesses to join our Pre-Launch Beta. You will be able to publish your venue's content to the early stage users in your area, make use of the application and provide our team with feedback from your experiences that we will take onboard before the final launch date.
                             </p>
-                            <p className="text-center max-w-3xl mx-auto text-sm md:text-lg font-inter font-normal">
+                            <p className="text-center  mx-auto text-sm md:text-lg font-inter font-normal">
                                 In return, we'll give you <span className="font-bold text-[#A261FF]">6 months of using Venu for FREE</span> from the go live date and 50 premium listing vouchers to promote your business further when the app is live.
                             </p>
                             <div className="flex justify-center items-end space-x-4">
@@ -50,9 +50,12 @@ export default function PreLaunch() {
                                             <p className="text-sm md:text-lg font-normal font-inter">Co-Founder</p>
                                         </div>
                                     </div>
-                                    <button className="bg-[#4B3666] hover:bg-purple-700 text-white text-xs md:text-base font-inter font-semibold px-3 py-1 rounded-full transition duration-300 ease-in-out">
+                                    <a
+                                        href={`mailto:${name.toLowerCase()}@wearevenue.com`}
+                                        className="bg-[#4B3666] hover:bg-purple-700 text-white text-xs md:text-base font-inter font-semibold px-3 py-1 rounded-full transition duration-300 ease-in-out"
+                                    >
                                         {name.toLowerCase()}@wearevenue.com
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         ))}
