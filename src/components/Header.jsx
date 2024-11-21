@@ -1,6 +1,4 @@
 import React,{useState} from 'react';
-// import SignUpModal from './SignUpModal';
-// import logo from "/assets/logo/logo.svg"
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false)
@@ -51,7 +49,6 @@ export default function Header() {
                         </a>
                     ))}
                     <button
-                        // onClick={() => setIsModalOpen(true)}
                         className="bg-[#8B3EF8] hover:bg-[#8B3EF8]/90 text-white py-2 px-6 rounded-full transition-colors duration-300 text-sm font-medium whitespace-nowrap md:text-base md:w-[202px] md:h-[48px]"
                     >
                         <a
@@ -62,8 +59,6 @@ export default function Header() {
                     </button>
                 </nav>
             </header>
-            {/* Assuming SignUpModal component exists */}
-            {/* {isModalOpen && <SignUpModal isOpen={isModalOpen} setIsOpen={setIsModalOpen} />} */}
         </>
     )
 }
