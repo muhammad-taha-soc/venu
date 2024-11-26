@@ -27,16 +27,6 @@ const features = [
         category: "end-user"
     },
     {
-        title: "Seamless booking and reservations",
-        image: "/assets/img/e-feature-5.svg",
-        category: "business"
-    },
-    {
-        title: "Detailed venue profiles with comprehensive information about events",
-        image: "/assets/img/e-feature-3.svg",
-        category: "business"
-    },
-    {
         title: "Detailed venue profiles with comprehensive information about events",
         image: "/assets/img/e-feature-3.svg",
         category: "end-user"
@@ -75,7 +65,72 @@ const features = [
         title: "Transfer tickets and bookings to friends",
         image: "/assets/img/e-feature-11.svg",
         category: "end-user"
-    }
+    },
+    {
+        title: "View customer metrics on demographic data for venue attendance to make targeted marketing decisions to connect with your community",
+        image: "/assets/img/e-feature-business-1.svg",
+        category: "business"
+    },
+    {
+        title: "View stories posted by your venue, create new stories and approve stories posted by customers, that are visible to everyone in your city",
+        image: "/assets/img/e-feature-business-2.svg",
+        category: "business"
+    },
+    {
+        title: "Manage events you’ve created, view attendees, access media and access bookings",
+        image: "/assets/img/e-feature-business-3.svg",
+        category: "business"
+    },
+    {
+        title: "View demographic metrics on specific events to make data driven business decisions",
+        image: "/assets/img/e-feature-business-4.svg",
+        category: "business"
+    },
+    {
+        title: "Seamlessly create new events and manage your media",
+        image: "/assets/img/e-feature-business-5.svg",
+        category: "business"
+    },
+    {
+        title: "View individual events to manage bookings, view stats and edit details",
+        image: "/assets/img/e-feature-business-6.svg",
+        category: "business"
+    },
+    {
+        title: "Manage your company profile, adjust settings and setup online payments",
+        image: "/assets/img/e-feature-business-7.svg",
+        category: "business"
+    },
+    {
+        title: "Choose your interface: If you are a group managing multiple venues or an independent venue",
+        image: "/assets/img/e-feature-business-8.svg",
+        category: "business"
+    },
+    {
+        title: "Seamlessly manage and switch between each business in one interface",
+        image: "/assets/img/e-feature-business-9.svg",
+        category: "business"
+    },
+    {
+        title: "Categorize your venue to make you visible to communities with exact interests",
+        image: "/assets/img/e-feature-business-10.svg",
+        category: "business"
+    },
+    {
+        title: "Send push notifications regarding promotions or event reminders to previous or potential customers",
+        image: "/assets/img/e-feature-business-11.svg",
+        category: "business"
+    },
+    {
+        title: "Manage upcoming bookings",
+        image: "/assets/img/e-feature-business-12.svg",
+        category: "business"
+    },
+    {
+        title: "Select whether its ticketed or free event",
+        image: "/assets/img/e-feature-business-13.svg",
+        category: "business"
+    },
 ];
 
 export default function ExcitingFeatures() {
