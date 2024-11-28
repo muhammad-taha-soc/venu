@@ -52,7 +52,7 @@ export default function PreLaunch() {
                                     </div>
                                     <a
                                         href={`mailto:${name.toLowerCase()}@wearevenue.com`}
-                                        className="bg-[#4B3666] hover:bg-purple-700 text-white text-xs md:text-base font-inter font-semibold px-3 py-1 rounded-full transition duration-300 ease-in-out"
+                                        className="bg-[#4B3666] hover:bg-purple-700 text-white text-xs md:text-base font-inter font-semibold px-3 py-[5px] rounded-full transition duration-300 ease-in-out"
                                     >
                                         {name.toLowerCase()}@wearevenue.com
                                     </a>

@@ -5,7 +5,7 @@ const Hero = () => {
             <div className="flex flex-col md:flex-row justify-between md:text-left items-center md:items-end lg:w-[94%] w-full  max-w-auto mx-auto">
                 <div  className="flex flex-col justify-center  md:items-start text-center md:text-left h-[500px] lg:h-[650px] md:w-[85%] p-6 mt-16 lg:mt-0 sm:p-0">
                     <h1 className="lg:text-6xl text-3xl mt-5 font-clash  md:px-6 font-semibold">
-                        <span className="" >Show Your <span className="">
+                        <span className="" >The Social, <span className="">
                             <div className="inline-flex -space-x-2 mb-4">
                                 {['round-img-1.png', 'round-img-2.png', 'round-img-3.png','round-img-4.jpg'].map((img, i) => (
                                     <div
@@ -20,9 +20,9 @@ const Hero = () => {
                                     </div>
                                 ))}
                             </div>
-                        </span> City <br />Who <span className="relative p-1"><img src='/assets/img/vector-hero-img.png' className="bg-cover inline absolute w-[300px] h-[34px] lg:w-[693px] lg:h-[56px]"/> You</span> Are!</span>
+                        </span> <br />Social <span className="relative p-1"><img src='/assets/img/vector-hero-img.png' className="bg-cover inline absolute w-[300px] h-[34px] lg:w-[693px] lg:h-[56px]"/> Network</span></span>
                     </h1>
-                    <p className="lg:text-lg md:px-6 my-6 font-inter md:w-[85%]">
+                    <p className="lg:text-lg md:px-6 my-6 font-inter font-normal md:w-[85%]">
                         Connect your business to a thriving community that helps users discover real-time venue and event info tailored to their interests and social circles, making it easy to explore, organize, and attend together.</p>
                     <p className="lg:text-lg md:px-6 my-4 font-general font-semibold">
                         Show Your Interest In The Pre-Launch Beta</p>

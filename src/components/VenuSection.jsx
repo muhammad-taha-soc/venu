@@ -16,7 +16,7 @@ export default function VenuSection() {
                 <p className="mb-8 text-[#200F36] font-inter font-normal text-lg">
                     For businesses, the real value lies in Venu's all-in-one platform for marketing, advertising, analytics and social engagement, enabling businesses to reach their local community with precision, driving targeted traffic and expanding their audience by creating a means for seamless discovery based on user interests.
                 </p>
-                <div className="space-y-4 text-[#200F36] font-inter font-normal text-lg">
+                <div className="space-y-4 text-[#200F36] font-inter font-semibold text-lg">
                     <div className="border rounded-lg border-[#E3D7F3] overflow-hidden">
                         <div
                             className="flex justify-between items-center cursor-pointer py-3 px-4"
