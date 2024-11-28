@@ -4,9 +4,44 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
 
     const [showThankYou, setShowThankYou] = useState(false)
 
-    const handleSubmit = (e) => {
+    const [formData, setFormData] = useState({
+        fullName: '',
+        companyName: '',
+        title: '',
+        email: '',
+        contactNumber: '',
+    })
+
+    const handleInputChange = (e) => {
+        const { name, value } = e.target
+        setFormData(prevData => ({
+            ...prevData,
+            [name]: value
+        }))
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        setShowThankYou(true)
+
+        // Send the form data to the backend
+        try {
+            const response = await fetch('http://localhost:3001/api/send-email', {  // Replace with your backend endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            if (response.ok) {
+                setShowThankYou(true)
+            } else {
+                alert("Failed to send email. Please try again.")
+            }
+        } catch (error) {
+            console.error("Error sending email:", error)
+            alert("Failed to send email. Please try again.")
+        }
     }
 
     if (!isOpen) return null
@@ -35,6 +70,9 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                                 <div>
                                     <input
                                         type="text"
+                                        name="fullName"
+                                        value={formData.fullName}
+                                        onChange={handleInputChange}
                                         placeholder="Full Name"
                                         className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                         required
@@ -43,6 +81,9 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                                 <div>
                                     <input
                                         type="text"
+                                        name="companyName"
+                                        value={formData.companyName}
+                                        onChange={handleInputChange}
                                         placeholder="Company Name"
                                         className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                         required
@@ -53,6 +94,9 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                                 <div>
                                     <input
                                         type="text"
+                                        name="title"
+                                        value={formData.title}
+                                        onChange={handleInputChange}
                                         placeholder="Title"
                                         className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                         required
@@ -61,6 +105,9 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                                 <div>
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
                                         placeholder="Email"
                                         className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                         required
@@ -70,6 +117,9 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                             <div>
                                 <input
                                     type="tel"
+                                    name="contactNumber"
+                                    value={formData.contactNumber}
+                                    onChange={handleInputChange}
                                     placeholder="Contact Number (optional)"
                                     className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                 />
