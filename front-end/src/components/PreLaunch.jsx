@@ -51,10 +51,10 @@ export default function PreLaunch() {
                                         </div>
                                     </div>
                                     <a
-                                        href={`mailto:${name.toLowerCase()}@wearevenue.com`}
+                                        href={`mailto:${name.toLowerCase()}@wearevenu.com`}
                                         className="bg-[#4B3666] hover:bg-purple-700 text-white text-xs md:text-base font-inter font-semibold px-3 py-[5px] rounded-full transition duration-300 ease-in-out"
                                     >
-                                        {name.toLowerCase()}@wearevenue.com
+                                        {name.toLowerCase()}@wearevenu.com
                                     </a>
                                 </div>
                             </div>
