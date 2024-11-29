@@ -39,7 +39,7 @@ const Hero = () => {
                 </div>
                 <div className="aspect-w-1 aspect-h-1 flex items-center justify-center md:block sm:mt-0 mt-10">
                     <img
-                        src='/assets/img/hero-group-crop.png'
+                        src='/assets/img/hero-section-group.png'
                         alt='hero'
                         className={`object-cover  w-2/3 h-2/3 lg:w-[95%] lg:h-[95%]`}
                     />
