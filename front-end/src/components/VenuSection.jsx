@@ -6,8 +6,7 @@ export default function VenuSection() {
 
     return (
         <section id="about" className="flex flex-col lg:flex-row justify-between items-start p-4 py-32 lg:w-[95%] w-full max-w-auto mx-auto mt-6">
-            <div className=" pr-0 lg:pr-12 text-left lg:ml-4">
-                {/* // remove w-full lg:w-1/2  */}
+            <div className="lg:w-1/2 pr-0 lg:pr-12 text-left lg:ml-4">
                 <h1 className="text-5xl font-semibold font-clash mb-6">
                     What is <span className="text-[#8B3EF8]">venu</span>?
                 </h1>
@@ -68,15 +67,14 @@ export default function VenuSection() {
                     </div>
                 </div>
             </div>
-            <div className="mt-8 lg:mt-0 lg:pl-12">
-                {/* //remove w-full lg:w-1/2 */}
+            <div className="lg:max-w-[515px] mt-8 lg:mt-0 lg:pl-12 flex justify-center items-center w-full">
+                {/* Flexbox centering and responsive image width */}
                 <div className="rounded-3xl">
                     <img
                         src="/assets/img/venu-section.svg"
                         alt="Venu app interface"
-                        className="mx-auto lg:max-w-[515px] max-h-[468px]"
+                        className="w-full sm:w-3/4 md:w-2/3 lg:w-[515px] h-auto mx-auto" // Resizes for different screen sizes
                     />
-                    {/* //remove w-3/4  */}
                 </div>
             </div>
         </section>
