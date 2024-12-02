@@ -25,7 +25,7 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
 
         // Send the form data to the backend
         try {
-            const response = await fetch('http://localhost:3001/api/send-email', {  // Replace with your backend endpoint
+            const response = await fetch('https://venu-app.com:5000/api/send-email', {  // Replace with your backend endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -138,6 +138,7 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                             src="/assets/img/signup.svg"
                             alt="Venu App Screenshot"
                             className="rounded-xl object-cover w-full h-full"
+                            loading='lazy'
                         />
                         <button
                             onClick={() => setIsOpen(false)}
