@@ -133,7 +133,6 @@ const features = [
     },
 ];
 
-
 export default function ExcitingFeatures() {
     const [selectedCategory, setSelectedCategory] = useState("end-user");
     const [imageLoaded, setImageLoaded] = useState({}); // Store loaded state for each image
@@ -170,7 +169,7 @@ export default function ExcitingFeatures() {
     }, [filteredFeatures]);
 
     return (
-        <section id='features' className="bg-white py-12 px-4 sm:px-6 lg:px-8">
+        <section id="features" className="bg-white py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-auto mx-auto lg:w-[95%]">
                 <h2 className="text-5xl font-semibold font-clash text-center mb-8">
                     Exciting <span className="text-[#8B3EF8]">Features</span>
@@ -215,7 +214,7 @@ export default function ExcitingFeatures() {
                                     <div className="aspect-w-1 aspect-h-1 flex justify-center mb-4 rounded-lg relative">
                                         {/* Skeleton loader */}
                                         {!imageLoaded[feature.image] && (
-                                            <div className="skeleton-loader absolute inset-0 bg-gray-200 rounded-lg"></div>
+                                            <div className="skeleton-loader absolute inset-0 bg-gray-200 rounded-lg animate-pulse"></div>
                                         )}
                                         <img
                                             src={feature.image}  // Use direct src for image loading
@@ -225,7 +224,10 @@ export default function ExcitingFeatures() {
                                             width="100%" // Ensure the image width scales accordingly
                                             height="auto" // Maintain aspect ratio
                                             onLoad={() => handleImageLoad(feature.image)} // Trigger image load
-                                            style={{ filter: !imageLoaded[feature.image] ? 'blur(10px)' : 'none' }} // Blur effect for smoother transition
+                                            style={{
+                                                filter: !imageLoaded[feature.image] ? 'blur(10px)' : 'none', // Blur effect for smoother transition
+                                                transition: 'filter 0.3s ease-out, opacity 0.5s ease-out'
+                                            }} // Smooth fade-in effect and blur removal
                                         />
                                     </div>
                                     <p className="text-2xl text-left font-clash font-medium text-black">
