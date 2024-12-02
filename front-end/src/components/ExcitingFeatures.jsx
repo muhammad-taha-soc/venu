@@ -230,9 +230,11 @@ export default function ExcitingFeatures() {
                                             }} // Smooth fade-in effect and blur removal
                                         />
                                     </div>
+                                    {imageLoaded[feature.image] &&
                                     <p className="text-2xl text-left font-clash font-medium text-black">
                                         {feature.title}
                                     </p>
+                                    }
                                 </div>
                             );
                         })
