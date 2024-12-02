@@ -133,13 +133,14 @@ const features = [
     },
 ];
 
+
 export default function ExcitingFeatures() {
     const [selectedCategory, setSelectedCategory] = useState("end-user");
-    const [imageLoaded, setImageLoaded] = useState({});  // Store loaded state for each image
+    const [imageLoaded, setImageLoaded] = useState({}); // Store loaded state for each image
 
     // Memoize the filtered features based on the selected category
-    const filteredFeatures = useMemo(() => 
-        features.filter((feature) => feature.category === selectedCategory), 
+    const filteredFeatures = useMemo(() =>
+        features.filter((feature) => feature.category === selectedCategory),
         [selectedCategory]
     );
 
@@ -160,6 +161,14 @@ export default function ExcitingFeatures() {
         }));
     };
 
+    // Preload images (useful for immediate display when required)
+    useEffect(() => {
+        filteredFeatures.forEach((feature) => {
+            const img = new Image();
+            img.src = feature.image; // Preload the image
+        });
+    }, [filteredFeatures]);
+
     return (
         <section id='features' className="bg-white py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-auto mx-auto lg:w-[95%]">
@@ -170,8 +179,8 @@ export default function ExcitingFeatures() {
                     <div className="bg-[#EFE7FB] p-0.5 rounded-full inline-flex space-x-0.5 font-inter font-semibold text-sm md:text-xl">
                         <button
                             className={`px-3 py-[5px] md:px-6 md:py-[10px] rounded-full ${selectedCategory === "end-user"
-                                    ? "bg-black text-white"
-                                    : "text-black"
+                                ? "bg-black text-white"
+                                : "text-black"
                                 }`}
                             onClick={() => setSelectedCategory("end-user")}
                         >
@@ -179,8 +188,8 @@ export default function ExcitingFeatures() {
                         </button>
                         <button
                             className={`px-3 py-[5px] md:px-6 md:py-[10px] rounded-full ${selectedCategory === "business"
-                                    ? "bg-black text-white"
-                                    : "text-black"
+                                ? "bg-black text-white"
+                                : "text-black"
                                 }`}
                             onClick={() => setSelectedCategory("business")}
                         >
@@ -199,8 +208,8 @@ export default function ExcitingFeatures() {
                                 <div
                                     key={feature.title} // Unique key based on feature title
                                     className={`max-w-[379px] mx-auto ${isLastRow && lastRowItems === 1
-                                            ? "lg:col-span-full"
-                                            : ""
+                                        ? "lg:col-span-full"
+                                        : ""
                                         }`}
                                 >
                                     <div className="aspect-w-1 aspect-h-1 flex justify-center mb-4 rounded-lg relative">
@@ -211,11 +220,12 @@ export default function ExcitingFeatures() {
                                         <img
                                             src={feature.image}  // Use direct src for image loading
                                             alt={feature.title}
-                                            className={`rounded-lg w-full transition-opacity duration-500 ${imageLoaded[feature.image] ? "opacity-100" : "opacity-0"}`} 
+                                            className={`rounded-lg w-full transition-opacity duration-500 ${imageLoaded[feature.image] ? "opacity-100" : "opacity-0"}`}
                                             loading="lazy"  // Keep lazy loading for better performance
                                             width="100%" // Ensure the image width scales accordingly
                                             height="auto" // Maintain aspect ratio
                                             onLoad={() => handleImageLoad(feature.image)} // Trigger image load
+                                            style={{ filter: !imageLoaded[feature.image] ? 'blur(10px)' : 'none' }} // Blur effect for smoother transition
                                         />
                                     </div>
                                     <p className="text-2xl text-left font-clash font-medium text-black">
