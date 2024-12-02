@@ -38,9 +38,9 @@ const Hero = () => {
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="w-full lg:w-[290px] flex-grow rounded-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
+                            className="w-full lg:w-[290px] flex-grow rounded-full border placeholder:text-base border-white/20 bg-white/10 px-4 py-3 text-white placeholder-white focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20"
                         />
-                        <button className="w-full md:w-[109px] mt-5 sm:mt-0 rounded-full bg-[#8B3EF8] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
+                        <button className="w-full md:w-[109px] mt-5 sm:mt-0 rounded-full bg-[#8B3EF8] px-6 py-3 text-base font-semibold text-white transition-colors hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2">
                             Sign Up
                         </button>
                     </div>

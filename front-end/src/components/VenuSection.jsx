@@ -27,7 +27,7 @@ export default function VenuSection() {
                             className="flex justify-between items-center cursor-pointer py-3 px-4"
                             onClick={() => setListExpanded(!listExpanded)}
                         >
-                            <span className="font-medium">List of opportunities</span>
+                            <span className="font-inter font-semibold text-lg">List of opportunities</span>
                             <span className="text-2xl leading-none">
                                 {listExpanded ? '−' : '+'}
                             </span>
@@ -51,7 +51,7 @@ export default function VenuSection() {
                             className="flex justify-between items-center cursor-pointer py-3 px-4"
                             onClick={() => setStrategyExpanded(!strategyExpanded)}
                         >
-                            <span className="font-medium">Working strategy of venu</span>
+                            <span className="font-inter font-semibold text-lg">Working strategy of venu</span>
                             <span className="text-2xl leading-none">
                                 {strategyExpanded ? '−' : '+'}
                             </span>
