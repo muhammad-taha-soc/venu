@@ -25,10 +25,10 @@ export default function PreLaunch() {
                                 </button>
                                 <img
                                     src="/assets/img/arrow-icon.svg"
-                                    width={63}
-                                    height={24}
+                                    // width={63}
+                                    // height={24}
                                     alt="Arrow"
-                                    className="w-[63.01px] h-[24px]"
+                                    className="-mb-4"
                                 />
                             </div>
                         </div>
