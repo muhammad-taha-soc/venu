@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useMemo ,useEffect} from "react";
 
 const features = [
     {
@@ -135,11 +135,30 @@ const features = [
 
 export default function ExcitingFeatures() {
     const [selectedCategory, setSelectedCategory] = useState("end-user");
+    const [imageLoaded, setImageLoaded] = useState({});  // Store loaded state for each image
 
-    // Filter features based on the selected category
-    const filteredFeatures = features.filter(
-        (feature) => feature.category === selectedCategory
+    // Memoize the filtered features based on the selected category
+    const filteredFeatures = useMemo(() => 
+        features.filter((feature) => feature.category === selectedCategory), 
+        [selectedCategory]
     );
+
+    // Effect to reset the image loaded state on category change
+    useEffect(() => {
+        const initialState = filteredFeatures.reduce((acc, feature) => {
+            acc[feature.image] = false; // Initialize image load state for each image
+            return acc;
+        }, {});
+        setImageLoaded(initialState);
+    }, [filteredFeatures]);
+
+    // Function to handle image loading event
+    const handleImageLoad = (imageSrc) => {
+        setImageLoaded(prevState => ({
+            ...prevState,
+            [imageSrc]: true  // Mark the specific image as loaded
+        }));
+    };
 
     return (
         <section id='features' className="bg-white py-12 px-4 sm:px-6 lg:px-8">
@@ -165,37 +184,49 @@ export default function ExcitingFeatures() {
                                 }`}
                             onClick={() => setSelectedCategory("business")}
                         >
-                            What businesses can use
+                            What Businesses Can Use
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredFeatures.map((feature, index) => {
-                        const isLastRow =
-                            index >= filteredFeatures.length - (filteredFeatures.length % 3 || 3);
-                        const lastRowItems = filteredFeatures.length % 3;
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ease-in-out">
+                    {filteredFeatures.length > 0 ? (
+                        filteredFeatures.map((feature, index) => {
+                            const isLastRow =
+                                index >= filteredFeatures.length - (filteredFeatures.length % 3 || 3);
+                            const lastRowItems = filteredFeatures.length % 3;
 
-                        return (
-                            <div
-                                key={index}
-                                className={`max-w-[379px] mx-auto ${isLastRow && lastRowItems === 1
-                                        ? "lg:col-span-full"
-                                        : ""
-                                    }`}
-                            >
-                                <div className="aspect-w-1 aspect-h-1 flex justify-center mb-4 rounded-lg">
-                                    <img
-                                        src={feature.image}
-                                        alt={feature.title}
-                                        className="rounded-lg w-full"
-                                    />
+                            return (
+                                <div
+                                    key={feature.title} // Unique key based on feature title
+                                    className={`max-w-[379px] mx-auto ${isLastRow && lastRowItems === 1
+                                            ? "lg:col-span-full"
+                                            : ""
+                                        }`}
+                                >
+                                    <div className="aspect-w-1 aspect-h-1 flex justify-center mb-4 rounded-lg relative">
+                                        {/* Skeleton loader */}
+                                        {!imageLoaded[feature.image] && (
+                                            <div className="skeleton-loader absolute inset-0 bg-gray-200 rounded-lg"></div>
+                                        )}
+                                        <img
+                                            src={feature.image}  // Use direct src for image loading
+                                            alt={feature.title}
+                                            className={`rounded-lg w-full transition-opacity duration-500 ${imageLoaded[feature.image] ? "opacity-100" : "opacity-0"}`} 
+                                            loading="lazy"  // Keep lazy loading for better performance
+                                            width="100%" // Ensure the image width scales accordingly
+                                            height="auto" // Maintain aspect ratio
+                                            onLoad={() => handleImageLoad(feature.image)} // Trigger image load
+                                        />
+                                    </div>
+                                    <p className="text-2xl text-left font-clash font-medium text-black">
+                                        {feature.title}
+                                    </p>
                                 </div>
-                                <p className="text-2xl text-left font-clash font-medium text-black">
-                                    {feature.title}
-                                </p>
-                            </div>
-                        );
-                    })}
+                            );
+                        })
+                    ) : (
+                        <p>No features available for this category.</p>  // Fallback when no features are found
+                    )}
                 </div>
             </div>
         </section>

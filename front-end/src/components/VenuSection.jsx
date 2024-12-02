@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 export default function VenuSection() {
-    const [listExpanded, setListExpanded] = useState(false)
-    const [strategyExpanded, setStrategyExpanded] = useState(false)
+    const [listExpanded, setListExpanded] = useState(false);
+    const [strategyExpanded, setStrategyExpanded] = useState(false);
+    const [imageLoaded, setImageLoaded] = useState(false);  // Track if the image has loaded
+
+    const handleImageLoad = () => {
+        setImageLoaded(true); // Set imageLoaded to true once image is loaded
+    };
 
     return (
         <section id="about" className="flex flex-col lg:flex-row justify-between items-start p-4 py-32 lg:w-[95%] w-full max-w-auto mx-auto mt-6">
@@ -68,15 +73,21 @@ export default function VenuSection() {
                 </div>
             </div>
             <div className="lg:max-w-[515px] mt-8 lg:mt-0 lg:pl-12 flex justify-center items-center w-full">
-                {/* Flexbox centering and responsive image width */}
-                <div className="rounded-3xl">
+                {/* Image Container */}
+                <div className="rounded-3xl w-full h-full relative">
+                    {/* Skeleton Loader */}
+                    {!imageLoaded && (
+                        <div className="skeleton-loader absolute inset-0 bg-gray-200 rounded-3xl"></div>
+                    )}
                     <img
                         src="/assets/img/venu-section.svg"
                         alt="Venu app interface"
-                        className="w-full sm:w-3/4 md:w-2/3 lg:w-[515px] h-auto mx-auto" // Resizes for different screen sizes
+                        className={`w-full sm:w-3/4 md:w-2/3 lg:w-[515px] h-auto mx-auto rounded-3xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
+                        loading="lazy"
+                        onLoad={handleImageLoad} // Trigger image load handler
                     />
                 </div>
             </div>
         </section>
-    )
+    );
 }
