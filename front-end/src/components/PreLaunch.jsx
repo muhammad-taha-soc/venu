@@ -28,7 +28,7 @@ export default function PreLaunch() {
                                     // width={63}
                                     // height={24}
                                     alt="Arrow"
-                                    className="-mb-4"
+                                    className="-mb-4 md:h-auto md:w-auto h-6"
                                 />
                             </div>
                         </div>
