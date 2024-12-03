@@ -133,9 +133,9 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                         </form>
                     </div>
 
-                    <div className="flex-1 hidden md:block relative bg-[#8B3EF8]  rounded-[32px] px-3 pt-3">
+                    <div className="flex-1 hidden md:block relative bg-[#8B3EF8]  rounded-[32px] pl-3 pt-3">
                         <img
-                            src="/assets/img/signup.svg"
+                            src="/assets/img/signup.png"
                             alt="Venu App Screenshot"
                             className="rounded-xl object-cover w-full h-full"
                             loading='lazy'

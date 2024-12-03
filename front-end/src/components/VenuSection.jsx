@@ -80,7 +80,7 @@ export default function VenuSection() {
                         <div className="skeleton-loader absolute inset-0 bg-gray-200 rounded-3xl"></div>
                     )}
                     <img
-                        src="/assets/img/venu-section.svg"
+                        src="/assets/img/venu-section.png"
                         alt="Venu app interface"
                         className={`w-full sm:w-3/4 md:w-2/3 lg:w-[515px] h-auto mx-auto rounded-3xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
                         loading="lazy"
