@@ -184,7 +184,7 @@ const EndUserFeatures = ({ features, imageLoaded, handleImageLoad }) => {
 const BusinessFeatures = ({ features, imageLoaded, handleImageLoad }) => {
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ease-in-out">
-            {features.length > 0 ? (
+            {features.length && (
                 features.map((feature, index) => {
                     const isLastRow = index >= features.length - (features.length % 3 || 3);
                     const lastRowItems = features.length % 3;
@@ -219,8 +219,6 @@ const BusinessFeatures = ({ features, imageLoaded, handleImageLoad }) => {
                         </div>
                     );
                 })
-            ) : (
-                <p>No features available for businesses.</p>
             )}
         </div>
     );
