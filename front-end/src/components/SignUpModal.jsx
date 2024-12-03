@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export default function SignUpModal({ isOpen, setIsOpen }) {
 
     const [showThankYou, setShowThankYou] = useState(false)
+    const [loading, setLoading] = useState(false)
 
     const [formData, setFormData] = useState({
         fullName: '',
@@ -22,6 +23,7 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoading(true) // Set loading to true when form is submitted
 
         // Send the form data to the backend
         try {
@@ -41,6 +43,8 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
         } catch (error) {
             console.error("Error sending email:", error)
             alert("Failed to send email. Please try again.")
+        } finally {
+            setLoading(false) // Set loading to false after the submission is complete
         }
     }
 
@@ -124,11 +128,17 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                                     className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                 />
                             </div>
+
                             <button
                                 type="submit"
-                                className="w-full py-3 px-4 bg-[#8B3EF8] text-white rounded-full hover:bg-purple-700 transition-colors font-semibold "
+                                className="w-full py-3 px-4 bg-[#8B3EF8] text-white rounded-full hover:bg-purple-700 transition-colors font-semibold flex items-center justify-center"
+                                disabled={loading} // Disable the button when loading
                             >
-                                Sign Up
+                                {loading ? (
+                                    <div className="loader"></div> // Show loader when loading
+                                ) : (
+                                    'Sign Up'
+                                )}
                             </button>
                         </form>
                     </div>
