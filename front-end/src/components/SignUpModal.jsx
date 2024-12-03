@@ -4,6 +4,7 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
 
     const [showThankYou, setShowThankYou] = useState(false)
     const [loading, setLoading] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")  // Added state for error message
 
     const [formData, setFormData] = useState({
         fullName: '',
@@ -24,6 +25,7 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setLoading(true) // Set loading to true when form is submitted
+        setErrorMessage("") // Clear previous errors
 
         // Send the form data to the backend
         try {
@@ -38,11 +40,11 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
             if (response.ok) {
                 setShowThankYou(true)
             } else {
-                alert("Failed to send email. Please try again.")
+                setErrorMessage("Failed to send email. Please try again.") // Set error message
             }
         } catch (error) {
             console.error("Error sending email:", error)
-            alert("Failed to send email. Please try again.")
+            setErrorMessage("Failed to send email. Please try again.") // Set error message
         } finally {
             setLoading(false) // Set loading to false after the submission is complete
         }
@@ -128,6 +130,12 @@ export default function SignUpModal({ isOpen, setIsOpen }) {
                                     className="w-full px-0 py-2 border-b border-gray-300 bg-transparent focus:outline-none focus:border-purple-600 placeholder-black"
                                 />
                             </div>
+
+                            {errorMessage && (
+                                <div className="text-red-600 text-sm mt-2">
+                                    {errorMessage}
+                                </div>
+                            )}
 
                             <button
                                 type="submit"
