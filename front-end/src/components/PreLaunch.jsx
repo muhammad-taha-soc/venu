@@ -6,7 +6,7 @@ export default function PreLaunch() {
 
     return (
         <>
-            <section id="signup"  className="flex flex-col items-center justify-center p-4">
+            <section id="signup" className="flex flex-col items-center justify-center p-4">
                 <div className=" lg:w-[95%] w-full max-w-auto ">
                     <div style={{ backgroundPosition: "-816px -978px" }} className="bg-[#200F36] bg-background-image bg-cover text-white rounded-3xl overflow-hidden shadow-lg">
                         <div className="p-8 md:p-12 space-y-6">
@@ -39,7 +39,7 @@ export default function PreLaunch() {
                                 <div className="p-4 flex items-center justify-between">
                                     <div className="flex items-center space-x-4">
                                         <img
-                                            src="/assets/img/profile.svg"
+                                            src={`/assets/img/${name == "Ben" ? "profile-ben.jpg" : "profile.svg"}`}
                                             width={48}
                                             height={48}
                                             alt={`${name}'s profile`}
