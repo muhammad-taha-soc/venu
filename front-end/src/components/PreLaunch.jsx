@@ -37,7 +37,7 @@ export default function PreLaunch() {
                                 <div className="p-4 flex items-center justify-between">
                                     <div className="flex items-center space-x-4">
                                         <img
-                                            src={`/assets/img/${name == "Ben" ? "profile-ben.jpg" : "profile.svg"}`}
+                                            src={`/assets/img/${name == "Ben" ? "profile-ben.jpg" : "profile-oscar.png"}`}
                                             width={48}
                                             height={48}
                                             alt={`${name}'s profile`}
