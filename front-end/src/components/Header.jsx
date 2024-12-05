@@ -1,15 +1,19 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 
 export default function Header() {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
-        setIsOpen(!isOpen)
-    }
+        setIsOpen(!isOpen);
+    };
+
+    const closeMenu = () => {
+        setIsOpen(false);
+    };
 
     return (
         <>
-            <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-auto  mx-auto bg-black text-white z-50 py-3 px-6 flex items-center justify-between rounded-full">
+            <header className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-auto mx-auto bg-black text-white z-50 py-3 px-6 flex items-center justify-between rounded-full">
                 <img src="/assets/logo/logo.svg" alt="Logo" className="h-8 w-auto" />
 
                 <div className="md:hidden">
@@ -30,19 +34,22 @@ export default function Header() {
                     </button>
                 </div>
 
-                <nav className={`
-          absolute md:relative top-full left-0 right-0 mt-2 md:mt-0
-          md:flex items-center gap-8 
-          ${isOpen ? 'flex' : 'hidden'} md:flex
-          ${isOpen ? 'flex-col' : 'flex-row'}
-          md:flex-row
-          ${isOpen ? 'bg-black rounded-2xl p-4' : ''}
-          md:bg-transparent md:p-0
-        `}>
+                <nav
+                    className={`
+                        absolute md:relative top-full left-0 right-0 mt-2 md:mt-0
+                        md:flex items-center gap-8 
+                        ${isOpen ? 'flex' : 'hidden'} md:flex
+                        ${isOpen ? 'flex-col' : 'flex-row'}
+                        md:flex-row
+                        ${isOpen ? 'bg-black rounded-2xl p-4' : ''}
+                        md:bg-transparent md:p-0
+                    `}
+                >
                     {['About', 'Features', 'Contact'].map((link) => (
                         <a
                             key={link}
                             href={`#${link.toLowerCase()}`}
+                            onClick={closeMenu}  // Add this to close the menu on link click
                             className="text-sm font-inter hover:text-gray-300 md:text-base transition-colors font-medium duration-300 py-2 md:py-0"
                         >
                             {link}
@@ -51,14 +58,12 @@ export default function Header() {
                     <button
                         className="bg-[#8B3EF8] hover:bg-[#8B3EF8]/90 text-white py-2 px-6 rounded-full transition-colors duration-300 text-sm font-medium whitespace-nowrap md:text-base md:w-[202px] md:h-[48px]"
                     >
-                        <a
-                        href='#signup'>
-
-                        Pre-Launch Sign Up
+                        <a href="#signup" onClick={closeMenu} >
+                            Pre-Launch Sign Up
                         </a>
                     </button>
                 </nav>
             </header>
         </>
-    )
+    );
 }
