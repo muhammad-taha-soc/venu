@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const user = [
     {
-        title: "Personalized venue/activity recommendations based your interests and your attendance/ activity history",
+        title: "Personalized recommendations based on your interests and activity history",
         image: "/assets/img/e-feature-1.png",
         category: "end-user"
     },
