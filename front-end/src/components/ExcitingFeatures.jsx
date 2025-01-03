@@ -67,6 +67,7 @@ const user = [
         category: "end-user"
     },
 ];
+
 const business = [
     {
         title: "View customer metrics on demographic data for venue attendance to make targeted marketing decisions to connect with your community",
